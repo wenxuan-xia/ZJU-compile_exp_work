@@ -1,7 +1,4 @@
-%{            //全局声明部分
-/*林木100 linux
-www.linmu100.com
-*/
+%{
 #include <stdio.h>  
 #include <ctype.h>
 extern char *yytext;
@@ -13,8 +10,8 @@ int sem_count = 0;
 
 %%
 
-[/\*.*\*/] {printf("%s",toupper(yytext) )}
-
+[\/\*.*\*\/] {printf("%s",toupper(yytext) )}
+[\\\\[^\d\n]*] {printf("%d", toupper(yytext))}
 
 %%
 
